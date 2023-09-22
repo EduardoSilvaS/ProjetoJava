@@ -1,7 +1,8 @@
 public class BlackJack {
     public static void main(String[] args) throws Exception {
         Deck deck = new Deck(); // create a new deck
-        Card[] inicial = new Card[2]; // initial hand
+
+        Card[] inicial = new Card[2]; // create an initial hand
             inicial[0] = deck.dealCard();
             inicial[1] = deck.dealCard();
 
@@ -9,5 +10,8 @@ public class BlackJack {
 
         System.out.println(jogador.getSoma_cartas()); 
         deck.printDeck();
+
+        jogador.dealCard(deck.dealCard());
+        System.out.println(jogador.getSoma_cartas()); 
     }
 }

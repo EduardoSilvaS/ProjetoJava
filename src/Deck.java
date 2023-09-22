@@ -2,11 +2,10 @@ import java.security.SecureRandom;
 
 
 public class Deck {
-    private Card[] deck; // array of cards
-    private static final int DECK_SIZE = 52; // constant for the size of the deck
-
     private static final SecureRandom rand = new SecureRandom(); // needed instatiates the class in order to use nextInt(); method
 
+    private Card[] deck; // array of cards
+    private static final int DECK_SIZE = 52; // constant for the size of the deck
 
     Deck() {
         // build the deck

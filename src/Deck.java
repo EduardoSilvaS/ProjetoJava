@@ -10,7 +10,7 @@ public class Deck {
 
     Deck() {
         // build the deck
-        String[] faces = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Valette", "Dama", "Rei", "Ás"};
+        String[] faces = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Valette", "Dama", "Rei", "As"};
         String[] naipes = {"Ouros", "Espadas", "Copas", "Paus"};
 
         this.deck = new Card[DECK_SIZE];
@@ -34,6 +34,12 @@ public class Deck {
             Card temp = this.deck[i];
             this.deck[i] = this.deck[j];
             this.deck[j] = temp;
+        }
+    }
+
+    public void printDeck() {
+        for (int i = 0; i < DECK_SIZE; i++) {
+            System.out.println(this.deck[i].toString());
         }
     }
 }

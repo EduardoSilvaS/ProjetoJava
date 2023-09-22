@@ -1,10 +1,7 @@
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
 public class Card {
     private final String face; // face of the card
     private final String naipe; // suit of the card
-    public    int valor_carta; // value of the card
+    private int valor_carta; // value of the card
 
     // constructor to initialize the card
     Card(String face, String naipe) { 
@@ -45,5 +42,9 @@ public class Card {
             }
         }
         return test;
+    }
+
+    public int getValor_carta(){
+        return this.valor_carta;
     }
 }

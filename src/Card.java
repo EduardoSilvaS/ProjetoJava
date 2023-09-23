@@ -1,6 +1,7 @@
 public class Card {
     private final String face; // face of the card
     private final String naipe; // suit of the card
+    private boolean is_hidden; // whether the card is hidden
     private int valor_carta; // value of the card
 
     // constructor to initialize the card
@@ -8,11 +9,13 @@ public class Card {
         this.face = face;
         this.naipe = naipe;
         this.valor_carta = checkValue(); 
+        this.is_hidden = false;
     }
 
     // return String representation of the card
     public String toString() 
-    { 
+    {
+        if(this.is_hidden) return "Escondido";	
         return this.face + " de " + this.naipe;
     } 
     
@@ -44,7 +47,13 @@ public class Card {
         return test;
     }
 
+    // returns the value of the card
     public int getValor_carta(){
         return this.valor_carta;
+    }
+
+    // hide a card
+    public void setHidden(){
+        this.is_hidden = true;
     }
 }

@@ -3,10 +3,17 @@ public class Player {
     private int soma_cartas; // array containing the value of the hand
     private int n_cartas = 2; // variable containing the amount of cards in the player's hand
 
-    Player(Card[] cards) {
+    Player(Card[] cards, String type) {
         this.mao = new Card[20]; // 20 represents the maximum amount of cards a player can have
-        this.mao[0] = cards[0]; // the player start the game with 2 cards
-        this.mao[1] = cards[1];
+        if (type.equals("p")) { // check if it's the dealer or the player
+            this.mao[0] = cards[0]; // the player start the game with 2 cards
+            this.mao[1] = cards[1];
+        }
+        if (type.equals("d")) {
+            cards[0].setHidden();   // the first card of dealer is hidden
+            this.mao[0] = cards[0]; // the dealer also start the game with 2 cards
+            this.mao[1] = cards[1];
+        }
 
         sumOfCards();
     }
@@ -30,5 +37,11 @@ public class Player {
     // returns the sum of the cards
     public int getSoma_cartas() {
         return this.soma_cartas;
-    }    
+    }  
+    
+    public void printMao() {
+        for (int i = 0; i < this.n_cartas; i++) {
+            System.out.printf("[" + this.mao[i].toString() + "]");
+        }
+    }
 }
